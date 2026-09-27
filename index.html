@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hosen's Personal Portfolio</title>
+
+
+    <!-- Font Awesome Original Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <style>
+
+        /* ================= GENERAL ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: linear-gradient(135deg, #111827, #1e3a8a);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+
+        header p {
+            font-size: 18px;
+            color: #dbeafe;
+            max-width: 800px;
+            margin: auto;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            background: white;
+            padding: 16px;
+            text-align: center;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: #111827;
+            margin: 0 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+
+        /* ================= CONTAINER ================= */
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 35px 20px;
+        }
+
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 30px;
+            border-radius: 15px;
+
+            box-shadow:
+                0 3px 15px rgba(0,0,0,0.08);
+        }
+
+
+        section h2 {
+            color: #111827;
+            margin-bottom: 18px;
+
+            border-bottom:
+                2px solid #2563eb;
+
+            padding-bottom: 8px;
+        }
+
+
+        section p {
+            margin-bottom: 12px;
+        }
+
+
+        /* ================= PROFILE ================= */
+
+        .profile {
+            text-align: center;
+        }
+
+
+        .profile img {
+            width: 160px;
+            height: 160px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 5px solid #2563eb;
+
+            margin-bottom: 15px;
+        }
+
+
+        .profile h2 {
+            border: none;
+            margin-bottom: 5px;
+        }
+
+
+        .profile p {
+            max-width: 700px;
+            margin: auto;
+        }
+
+
+        /* ================= CONTACT BUTTONS ================= */
+
+        .contact-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+
+        .contact-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            min-width: 120px;
+        }
+
+
+        /* ORIGINAL ICON STYLE */
+
+        .contact-btn i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+
+            opacity: 0.9;
+
+            box-shadow:
+                0 5px 12px rgba(0,0,0,0.15);
+        }
+
+
+        /* CALL */
+
+        .call {
+            background: #16a34a;
+        }
+
+
+        /* EMAIL */
+
+        .email {
+            background: #dc2626;
+        }
+
+
+        /* INSTAGRAM */
+
+        .instagram {
+            background:
+                linear-gradient(
+                    45deg,
+                    #f58529,
+                    #dd2a7b,
+                    #8134af,
+                    #515bd4
+                );
+        }
+
+
+        /* FACEBOOK */
+
+        .facebook {
+            background: #1877f2;
+        }
+
+
+        /* X */
+
+        .twitter {
+            background: #000000;
+        }
+
+
+        /* ================= CARDS ================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
+            gap: 20px;
+        }
+
+
+        .card {
+            background: #f8fafc;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            border-left:
+                4px solid #2563eb;
+        }
+
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skill {
+            margin-bottom: 18px;
+        }
+
+
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+
+        .skill-bar {
+            background: #e5e7eb;
+
+            height: 10px;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+
+        .skill-progress {
+            background: #2563eb;
+
+            height: 100%;
+
+            border-radius: 10px;
+        }
+
+
+        /* ================= LIST ================= */
+
+        ul {
+            padding-left: 22px;
+        }
+
+
+        li {
+            margin-bottom: 6px;
+        }
+
+
+        /* ================= CONTACT INFO ================= */
+
+        .contact-info {
+            background: #f8fafc;
+
+            padding: 20px;
+
+            border-radius: 10px;
+        }
+
+
+        .contact-info p {
+            margin: 12px 0;
+        }
+
+
+        .contact-info i {
+            width: 28px;
+
+            font-size: 18px;
+
+            text-align: center;
+
+            margin-right: 5px;
+        }
+
+
+        .contact-info a {
+            color: #2563eb;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111827;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            margin-top: 20px;
+        }
+
+
+        footer p {
+            margin: 5px 0;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 50px 15px;
+            }
+
+
+            header h1 {
+                font-size: 34px;
+            }
+
+
+            header p {
+                font-size: 15px;
+            }
+
+
+            nav {
+                padding: 12px 5px;
+            }
+
+
+            nav a {
+                display: inline-block;
+
+                margin: 5px 7px;
+
+                font-size: 13px;
+            }
+
+
+            section {
+                padding: 22px;
+            }
+
+
+            .profile img {
+                width: 130px;
+                height: 130px;
+            }
+
+
+            .contact-btn {
+                width: 100%;
+                min-width: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <h1>Hosen Ali</h1>
+
+        <p>
+            BBA Student |
+            Finance Learner |
+            AI Learner |
+            Business & Computer Skills
+        </p>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="#about">About</a>
+
+        <a href="#education">Education</a>
+
+        <a href="#internship">Internship</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#career">Career</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <div class="container">
+
+
+        <!-- ================= PROFILE ================= -->
+
+        <section class="profile">
+
+            <img
+                src="Hosendp.png"
+                alt="Hosen Ali"
+            >
+
+
+            <h2>
+                Hosen Ali
+            </h2>
+
+
+            <p>
+
+                BBA 5th Semester Student with an
+                interest in Finance, Business,
+                Computer Applications, Technology
+                and Stock Market Learning.
+
+            </p>
+
+
+            <!-- ================= FUNCTIONAL CONTACT BUTTONS ================= -->
+
+            <div class="contact-buttons">
+
+
+                <!-- CALL -->
+
+                <a
+                    href="tel:+918822068561"
+                    class="contact-btn call"
+                >
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    Call
+
+                </a>
+
+
+                <!-- EMAIL -->
+
+                <a
+                    href="mailto:hosenbusiness99@gmail.com"
+                    class="contact-btn email"
+                >
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Email
+
+                </a>
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://www.instagram.com/mr.hosen_g/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn instagram"
+                >
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    Instagram
+
+                </a>
+
+
+                <!-- FACEBOOK -->
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=100071855555298"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn facebook"
+                >
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                    Facebook
+
+                </a>
+
+
+                <!-- X -->
+
+                <a
+                    href="https://x.com/HosenAli2024"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn twitter"
+                >
+
+                    <i class="fa-brands fa-x-twitter"></i>
+
+                    Twitter
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about">
+
+            <h2>
+                About Me
+            </h2>
+
+
+            <p>
+
+                Hello! My name is Hosen Ali.
+                I am a BBA student with a
+                Finance specialization.
+
+            </p>
+
+
+            <p>
+
+                I am interested in business,
+                finance, stock market learning,
+                computer applications and
+                technology.
+
+            </p>
+
+
+            <p>
+
+                Along with my BBA studies,
+                I am learning computer skills,
+                HTML, CSS and practical
+                digital skills.
+
+                My goal is to continuously
+                improve my knowledge and
+                build practical experience.
+
+            </p>
+
+        </section>
+
+
+        <!-- ================= EDUCATION ================= -->
+
+        <section id="education">
+
+            <h2>
+                Education
+            </h2>
+
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <h3>
+                        Bachelor of Business Administration
+                    </h3>
+
+
+                    <p>
+                        <b>Current:</b>
+                        5th Semester
+                    </p>
+
+
+                    <p>
+                        <b>Major:</b>
+                        Finance
+                    </p>
+
+
+                    <p>
+                        Bhattadev University /
+                        B.H. College, Howly
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        PGDCA
+                    </h3>
+
+
+                    <p>
+
+                        Learning computer applications,
+                        digital tools and practical
+                        computer skills.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTERNSHIP ================= -->
+
+        <section id="internship">
+
+            <h2>
+                Internship Experience
+            </h2>
+
+
+            <div class="card">
+
+                <h3>
+                    M/S Pancharatna LPG Gas Agency
+                </h3>
+
+
+                <p>
+
+                    <b>Internship Period:</b>
+
+                    06 July 2026 –
+                    31 July 2026
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    <b>
+                        During my internship,
+                        I learned about:
+                    </b>
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        LPG domestic and
+                        commercial cylinders
+                    </li>
+
+                    <li>
+                        New connection and
+                        KYC verification
+                    </li>
+
+                    <li>
+                        LPG booking and
+                        delivery process
+                    </li>
+
+                    <li>
+                        Subsidy and
+                        bank/Aadhaar linking
+                    </li>
+
+                    <li>
+                        Customer complaints
+                        and service
+                    </li>
+
+                    <li>
+                        Inventory and
+                        cylinder management
+                    </li>
+
+                    <li>
+                        Storage and
+                        safety procedures
+                    </li>
+
+                    <li>
+                        Agency expenses
+                        and delivery charges
+                    </li>
+
+                    <li>
+                        Practical knowledge of
+                        day-to-day office operations
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SKILLS ================= -->
+
+        <section id="skills">
+
+            <h2>
+                Skills
+            </h2>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    Business & Management
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        style="width:80%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    Finance
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        style="width:75%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    MS Word
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        style="width:70%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    MS Excel
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        style="width:65%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    Customer Service
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        style="width:55%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    Problem Solving
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        style="width:45%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TECHNICAL SKILLS ================= -->
+
+        <section>
+
+            <h2>
+                Computer & Technical Skills
+            </h2>
+
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <h3>
+                        MS Office
+                    </h3>
+
+                    <p>
+                        MS Word, MS Excel, Power POint
+                        and basic office work.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Learning HTML and CSS
+                        for website development.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        Digital Skills
+                    </h3>
+
+                    <p>
+                        Learning online services,
+                        digital tools, QR systems
+                        and computer applications.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FINANCE ================= -->
+
+        <section>
+
+            <h2>
+                Finance & Stock Market Learning
+            </h2>
+
+
+            <p>
+
+                I have an interest in financial
+                markets and am currently learning
+                stock market concepts with a focus
+                on disciplined and risk-managed
+                trading.
+
+            </p>
+
+
+            <br>
+
+
+            <ul>
+
+                <li>
+                    Technical Analysis
+                </li>
+
+                <li>
+                    Support and Resistance
+                </li>
+
+                <li>
+                    Price Action
+                </li>
+
+                <li>
+                    Risk Management
+                </li>
+
+                <li>
+                    Risk-to-Reward Ratio
+                </li>
+
+                <li>
+                    Chart Patterns
+                </li>
+
+                <li>
+                    Paper Trading & Trade Journaling
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ================= CAREER ================= -->
+
+        <section id="career">
+
+            <h2>
+                Career Objective
+            </h2>
+
+
+            <p>
+
+                My objective is to complete my
+                BBA with strong practical knowledge
+                in Finance and Business Management
+                while continuously improving my
+                computer and digital skills.
+
+            </p>
+
+
+            <p>
+
+                I want to build a professional
+                career where I can use my knowledge
+                of finance, business and technology
+                to solve practical problems and
+                create value.
+
+            </p>
+
+        </section>
+
+
+        <!-- ================= PERSONAL DETAILS ================= -->
+
+        <section>
+
+            <h2>
+                Personal Details
+            </h2>
+
+
+            <p>
+                <b>Name:</b>
+                Hosen Ali
+            </p>
+
+
+            <p>
+                <b>Course:</b>
+                Bachelor of Business Administration
+                (BBA)
+            </p>
+
+
+            <p>
+                <b>Semester:</b>
+                5th Semester
+            </p>
+
+
+            <p>
+                <b>Specialization:</b>
+                Finance
+            </p>
+
+
+            <p>
+                <b>Location:</b>
+                Assam, India
+            </p>
+
+
+            <p>
+                <b>Languages:</b>
+                Assamese, Bengali, Hindi, English
+            </p>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact">
+
+            <h2>
+                Contact Me
+            </h2>
+
+
+            <div class="contact-info">
+
+
+                <!-- EMAIL -->
+
+                <p>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <b>Email:</b>
+
+                    <a
+                        href="mailto:hosenbusiness99@gmail.com"
+                    >
+
+                        hosenbusiness99@gmail.com
+
+                    </a>
+
+                </p>
+
+
+                <!-- PHONE -->
+
+                <p>
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <b>Phone:</b>
+
+                    <a
+                        href="tel:+918822068561"
+                    >
+
+                        +91 8822068561
+
+                    </a>
+
+                </p>
+
+
+                <!-- INSTAGRAM -->
+
+                <p>
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    <b>Instagram:</b>
+
+                    <a
+                        href="https://www.instagram.com/mr.hosen_g/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        @mr.hosen_g
+
+                    </a>
+
+                </p>
+
+
+                <!-- FACEBOOK -->
+
+                <p>
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                    <b>Facebook:</b>
+
+                    <a
+                        href="https://www.facebook.com/profile.php?id=100071855555298"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        Visit Facebook Profile
+
+                    </a>
+
+                </p>
+
+
+                <!-- X -->
+
+                <p>
+
+                    <i class="fa-brands fa-x-twitter"></i>
+
+                    <b>Twitter:</b>
+
+                    <a
+                        href="https://x.com/HosenAli2024"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        @HosenAli
+
+                    </a>
+
+                </p>
+
+
+            </div>
+
+
+            <!-- CONTACT BUTTONS -->
+
+            <div class="contact-buttons">
+
+
+                <!-- CALL -->
+
+                <a
+                    href="tel:+918822068561"
+                    class="contact-btn call"
+                >
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    Call Me
+
+                </a>
+
+
+                <!-- EMAIL -->
+
+                <a
+                    href="mailto:hosenbusiness99@gmail.com"
+                    class="contact-btn email"
+                >
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Send Email
+
+                </a>
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://www.instagram.com/mr.hosen_g/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn instagram"
+                >
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                    Instagram
+
+                </a>
+
+
+                <!-- FACEBOOK -->
+
+                <a
+                    href="https://www.facebook.com/profile.php?id=100071855555298"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn facebook"
+                >
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                    Facebook
+
+                </a>
+
+
+                <!-- X -->
+
+                <a
+                    href="https://x.com/HosenAli2024"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-btn twitter"
+                >
+
+                    <i class="fa-brands fa-x-twitter"></i>
+
+                    Twitter
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Hosen Ali.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Personal Portfolio Website
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
